@@ -1,0 +1,68 @@
+extends  ../_skeleton
+
+include ../components/_ui-team
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Projects'
+
+block page
+  // Page Header
+  include ../sections/_header-classic
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    img: 'images/parallax-img-3.jpg',
+    modClass: 'overlay-4'
+  })
+
+  section.section.section-lg.section-lg-1.bg-default
+    .container
+      .row.row-50
+        .col-md-6.col-lg-4.wow-outer
+          +team-minimal({
+            img: 'team-minimal-6-370x395',
+            name: 'Lions',
+            text: '$340k Donated'
+          })
+
+        .col-md-6.col-lg-4.wow-outer
+          +team-minimal({
+            img: 'team-minimal-1-370x395',
+            name: 'Cheetahs',
+            text: '$550K Donated'
+          })
+
+        .col-md-6.col-lg-4.wow-outer
+          +team-minimal({
+            img: 'team-minimal-2-370x395',
+            name: 'Tiger Cubs',
+            text: '$610k donated'
+          })
+
+        .col-md-6.col-lg-4.wow-outer
+          +team-minimal({
+            img: 'team-minimal-4-370x395',
+            name: 'Elephants',
+            text: '$850k Donated'
+          })
+
+        .col-md-6.col-lg-4.wow-outer
+          +team-minimal({
+            img: 'team-minimal-5-370x395',
+            name: 'Tigers without Borders',
+            text: '$910K Donated'
+          })
+
+        .col-md-6.col-lg-4.wow-outer
+          +team-minimal({
+            img: 'team-minimal-3-370x395',
+            name: 'Protecting Lions',
+            text: '$490k donated'
+          })
+
+
+
+  // Page Footer
+  include ../sections/_footer-minimal

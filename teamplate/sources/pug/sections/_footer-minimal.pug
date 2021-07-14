@@ -1,0 +1,34 @@
+footer.section.footer-minimal.context-dark
+	.container.wow-outer
+		.wow.fadeIn
+			.row.row-30.row-xl-50
+				
+				.col-12
+					a.footer-brand(href='index.html')
+						+png( logo.inverse.normal )( srcset='images/' + logo.inverse.retina + '.png 2x' )
+				.col-12
+					ul.footer-minimal-nav
+						li: a(href='about-us.html') About
+						li: a(href='news.html') News
+						li: a(href='contacts.html') contacts 
+						li: a(href='gallery.html') Gallery
+						li: a(href='donate.html') Donate
+				.col-12
+					ul.social-list
+						li: a(href='#').icon.icon-sm.icon-circle.icon-circle-md.icon-bg-white.fa-facebook
+						li: a(href='#').icon.icon-sm.icon-circle.icon-circle-md.icon-bg-white.fa-instagram
+						li: a(href='#').icon.icon-sm.icon-circle.icon-circle-md.icon-bg-white.fa-twitter
+						li: a(href='#').icon.icon-sm.icon-circle.icon-circle-md.icon-bg-white.fa-youtube-play
+						li: a(href='#').icon.icon-sm.icon-circle.icon-circle-md.icon-bg-white.fa-pinterest-p
+	
+			p.rights
+				span &copy;&nbsp; 
+				span.copyright-year
+				span &nbsp;
+				span= logo.name
+				span .&nbsp;
+				span All Rights Reserved
+				span .&nbsp;
+				a( href='privacy-policy.html' ) Privacy Policy
+				| . Design&nbsp;by&nbsp;#[a( href='https://zemez.io/' ) Zemez]
+						

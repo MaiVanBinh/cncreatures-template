@@ -1,0 +1,65 @@
+extends  ../_skeleton
+
+include ../components/_ui-team
+
+block variables
+	- var activeCategory = 'our-team'
+	- var pageName = 'Our Team'
+
+block page 
+	// Page Header
+	include ../sections/_header-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		img: 'images/typography-title-bg.jpg'
+	})
+	
+	section.section.section-lg.bg-gray-1
+		.container
+			.row.no-gutters
+				.col-md-6.col-lg-4
+					+team-classic({
+						img: 'team-classic-1-390x252',
+						name: 'Ronald King',
+						text: 'Founder & CEO'
+					})
+				.col-md-6.col-lg-4
+					+team-classic({
+						img: 'team-classic-2-390x252',
+						name: 'Kate Peterson',
+						text: 'Operations Manager'
+					})
+				.col-md-6.col-lg-4
+					+team-classic({
+						img: 'team-classic-3-390x252',
+						name: 'Timothy Williams',
+						text: 'Primary Vet'
+					})
+				.col-md-6.col-lg-4
+					+team-classic({
+						img: 'team-classic-4-390x252',
+						name: 'Marie McMillan',
+						text: 'Research Director'
+					})
+				.col-md-6.col-lg-4
+					+team-classic({
+						img: 'team-classic-5-390x252',
+						name: 'Samuel Wilson',
+						text: 'Head of Volunteer Committee'
+					})
+				.col-md-6.col-lg-4
+					+team-classic({
+						img: 'team-classic-6-390x252',
+						name: 'Jane Clark',
+						text: 'program Manager'
+					})
+
+
+
+
+
+
+	// Page Footer
+	include ../sections/_footer-minimal

@@ -1,0 +1,81 @@
+extends  ../_skeleton
+
+include ../components/_ui-team
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Donate'
+
+block page
+  // Page Header
+  include ../sections/_header-classic
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    img: 'images/parallax-img-4.jpg',
+    modClass: 'overlay-4'
+  })
+
+  section.section.section-custom-2.bg-default
+    .container
+      .row
+        .col-12
+          h3.heading-3-custom You are donating to: Wildlife Foundation
+          p.big-1 How much would you like to donate?
+          .group-xs.group-middle.toggle-buttons-js
+            .button.button-lg-custom-2.button-gray-outline.active $10
+            .button.button-lg-custom-2.button-gray-outline $20
+            .button.button-lg-custom-2.button-gray-outline $50
+            .button.button-lg-custom-2.button-gray-outline $100
+            form.rd-form.form-number-range(method='post')
+              .form-wrap
+                input#amount-name.form-input.form-number-range-input(type='text' name='amount-name' data-constraints='@Numeric')
+                label.form-label(for='amount-name') Custom Amount, $
+
+  section.section.section-custom-3.bg-gray-1
+    .container
+      .row
+        .col-12
+          form.rd-form.rd-mailform(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+            .row.row-14.row-narrow
+              .col-lg-4
+                .form-wrap
+                  input#contact-first-name.form-input(type='text' name='name' data-constraints='@Required')
+                  label.form-label(for='contact-first-name') First Name
+
+              .col-lg-4
+                .form-wrap
+                  input#contact-last-name.form-input(type='text' name='name' data-constraints='@Required')
+                  label.form-label(for='contact-last-name') Last Name
+
+              .col-lg-4
+                .form-wrap
+                  input#contact-phone-2.form-input(type='text' name='phone' data-constraints='@Numeric')
+                  label.form-label(for='contact-phone-2') Phone
+
+              .col-lg-4
+                .form-wrap
+                  input#contact-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+                  label.form-label(for='contact-email') E-mail
+
+              .col-lg-8
+                .form-wrap
+                  input#contact-address.form-input(type='text' name='name' data-constraints='@Required')
+                  label.form-label(for='contact-address') Address
+
+              .col-lg-12
+                .form-wrap
+                  label.form-label(for='contact-comment') Comment
+                  textarea#contact-comment.form-input(name='comment' data-constraints='@Required')
+
+            .row
+              .col-12
+                button.button.button-primary.button-custom-2(type='submit') donate Now
+
+
+
+
+
+  // Page Footer
+  include ../sections/_footer-minimal

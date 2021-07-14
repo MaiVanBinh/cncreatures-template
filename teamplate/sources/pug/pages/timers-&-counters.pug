@@ -1,0 +1,42 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Timers & Counters'
+
+block page 
+	// Page Header
+	include ../sections/_header-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		img: 'images/icon-lists-title-bg.jpg'
+	})
+
+	
+	section.section.section-lg.bg-gray-1.pt-0
+		.container
+			.box-countdown-light.bg-dot
+				.box-countdown-light-inner
+					h3 Hurry Up!
+					p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.
+					
+
+					.countdown(data-type='until', data-time='17 Dec 2019 16:00', data-format='dhms')
+							
+	section.section.section-lg.bg-default
+		.container
+			.box-countdown-dark
+				.row.row-30.align-items-center.justify-content-xl-between
+					.col-lg-3.col-xl.text-center.text-lg-left 
+						h3 Hurry Up!
+						p Cum sociis natoque penatibus et magnis.
+					.col-lg-6.col-xl-7
+						.countdown(data-type='until', data-time='17 Dec 2019 16:00', data-format='dhms')
+					.col-lg-3.col-xl
+						a(href='#').button.button-primary.button-lg.button-block Donate Now
+						
+	include ../sections/_section-parallax-counters
+	// Page Footer
+	include ../sections/_footer-minimal

@@ -1,0 +1,310 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-team
+include ../components/_ui-gallery-item
+include ../components/_ui-posts
+include ../components/_ui-box-icon
+include ../components/_ui-event-item
+
+block variables
+  - var activeCategory = 'home'
+  - var pageName = 'Home'
+
+block page
+  // Page Header
+  include ../sections/_header-sidebar
+
+  // Swiper
+  section.section.swiper-container.swiper-slider.swiper-slider-1(data-loop='true' data-autoplay='5000' data-simulate-touch="false")
+    .swiper-wrapper
+      .swiper-slide.context-dark( data-slide-bg='images/swiper-slide-1.jpg' )
+        .swiper-slide-caption.section-lg
+          .container
+            .row.justify-content-md-end
+              .col-11.col-sm-10.col-md-7.col-lg-6
+                .box-geometry
+                  .figure.figure-1(data-parallax-scroll='{"y": -150, "x": 0,  "smoothness": 50 }')
+                  .figure.figure-2(data-parallax-scroll='{"y": 50, "x": 140,  "smoothness": 50 }')
+                  h1
+                    span.big.text-decorative-2p-white Save
+                    span.font-weight-light Wild Cats
+                  p Join Wildlife, the world’s leading charity foundation, which main goal is to help conserve and protect wild cats and other important animal species all over the globe.
+
+
+      .swiper-slide.context-dark( data-slide-bg='images/swiper-slide-2.jpg', style='background-position: 50% 50%' )
+        .swiper-slide-caption.section-lg
+          .container
+            .row.justify-content-md-end
+              .col-11.col-sm-10.col-md-7
+                .box-geometry.box-geometry-2
+                  .figure.figure-1(data-parallax-scroll='{"y": -150, "x": 0,  "smoothness": 50 }')
+                  .figure.figure-2(data-parallax-scroll='{"y": 50, "x": 140,  "smoothness": 50 }')
+                  h1
+                    span.big.text-decorative-2p-white make
+                    span.font-weight-light Cats Safe
+                  p We work to help wild cats and other animals worldwide and you can create their future with us. Your donations will serve the great cause of serving animals globally!
+
+
+
+    // Swiper Pagination
+    .swiper-pagination
+    .swiper-counter
+
+    // Swiper Navigation
+    .swiper-button-prev.fa-arrow-left
+    .swiper-button-next.fa-arrow-right
+
+
+  section.section.section-sm.section-sm-custom.bg-gray-3
+    .container
+      .row
+        .col-12.wow.slideInDown
+          form.rd-form.rd-mailform.rd-form-inline.rd-form-dark.rd-form-inline-custom(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+            .form-wrap.d-flex
+              select#amount-value.form-input.select2-dark( name='gender', data-constraints='@Required', data-placeholder='Select an Amount' data-dropdown-class="select2-dark" )
+                option( label='placeholder' )
+                option $100
+                option $250
+                option Other
+            .form-wrap
+              input#amount-name.form-input(type='text' name='name' data-constraints='@Required')
+              label.form-label(for='amount-name') Your Name
+            .form-wrap
+              input.form-input(id="amount-email" type="email" name="email" data-constraints="@Email @Required")
+              label.form-label(for="amount-email") E-mail
+            .form-button
+              button.button.button-primary.button-lg-custom(type="submit") Donate Now
+
+  section.section.section-lg.section-lg-1.bg-default
+    .container
+      .row.justify-content-center.text-center
+        .col-md-9.col-lg-7.wow-outer
+          .wow.slideInDown
+            h2.heading-with-text-bg
+              | Help Animals Worldwide
+              span.block-background-text.text-decorative-black-20.big our projects
+
+
+            p.text-gray-800-75.block-center(style="max-width: 650px;") Below are some of our recent charity projects that helped us protect wild cat species and save them from from retaliatory killings in 28 countries.
+
+      .row.row-20.row-xl-50
+        .col-md-6.col-lg-4.wow-outer
+          .wow.fadeInUp
+            +team-minimal({
+              img: 'team-minimal-3-370x395',
+              name: 'Lions',
+              text: '$340k Donated'
+            })
+        .col-md-6.col-lg-4.wow-outer
+          .wow.fadeInUp
+            +team-minimal({
+              img: 'team-minimal-1-370x395',
+              name: 'Cheetahs',
+              text: '$550K Donated'
+            })
+        .col-md-6.col-lg-4.wow-outer
+          .wow.fadeInUp
+            +team-minimal({
+              img: 'team-minimal-2-370x395',
+              name: 'Tiger Cubs',
+              text: '$610k donated'
+            })
+
+
+  +parallax({
+    img: 'bg-image-1.jpg',
+    innerClass: 'section-lg section-lg-2 context-dark text-center overlay overlay-1'
+  })
+    .container.wow-outer
+      .wow.slideInDown
+        h2: span.big.no-ls.font-weight-bold
+          | it's
+          span.text-decorative-2p-white &nbsp;time&nbsp;
+          | to act
+
+        a(href='#').button.button-xsm.button-white Read More
+
+
+
+
+
+  section.section.section-lg.bg-default
+    .row.justify-content-center.text-center
+      .col-md-9.col-lg-6.wow-outer
+        .wow.slideInDown
+          h2.heading-with-text-bg
+            | Saved Animals
+            span.block-background-text.text-decorative-black-20.big gallery
+          p.block-center(style="max-width: 650px;") In our gallery, you can take a look at the photos of wild cats and other animals that we’ve rescued and helped since our first day.
+
+    .row.row-30(data-isotope-group='gallery' data-lightgallery="group")
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-1-465x383',
+            imgOriginal: 'images/gallery-1-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-2-465x383',
+            imgOriginal: 'images/gallery-2-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-3-465x383',
+            imgOriginal: 'images/gallery-3-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-4-465x383',
+            imgOriginal: 'images/gallery-4-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-5-465x383',
+            imgOriginal: 'images/gallery-5-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-6-465x383',
+            imgOriginal: 'images/gallery-6-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-7-465x383',
+            imgOriginal: 'images/gallery-7-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-8-465x383',
+            imgOriginal: 'images/gallery-8-original.jpg'
+          })
+
+
+
+
+
+
+  section.section.section-xxl-custom.bg-gray-4.text-center.text-lg-left
+    .container
+      .row.row-50.justify-content-center.justify-content-lg-between
+        .col-lg-6.pr-xl-5
+          .box-geometry-3
+            .figure.figure-1(data-parallax-scroll='{"y": -20, "x": 140,  "smoothness": 70 }')
+            .figure.figure-2(data-parallax-scroll='{"y": 50, "x": -10,  "smoothness": 60 }')
+            .figure.figure-3(data-parallax-scroll='{"y": 50, "x": -200,  "smoothness": 80 }')
+            +jpg('about-us-1-528x400')
+        .col-10.col-lg-5
+          .box-offset-1
+            h2.heading-with-text-bg
+              | About Wildlife
+              span.block-background-text.text-decorative-white-20.big About Us
+            .mt-35
+              p Wildlife is devoted to the conservation of the world’s wild cats and dozens of other endangered species.
+              p Our team of leading biologists and law enforcement experts develop innovative strategies to address the dire threats facing the wild animals globally.
+              a(href='about-us.html').button.button-xsm.button-white Read More
+
+
+  include  ../sections/_section-icon-list-1
+
+  include ../sections/_section-parallax-counters
+
+
+  section.section-lg.bg-default
+    .container.wow-outer
+      .text-center
+        h2.heading-with-text-bg
+          | Latest News
+          span.block-background-text.text-decorative-black-20.big Latest news
+      // Owl Carousel
+      .owl-carousel.owl-dots-dark.wow.fadeInUp(data-items='1', data-md-items='2' data-lg-items='3' data-dots='true' data-nav='false' data-stage-padding='0', data-loop='false', data-margin='30', data-mouse-drag="false" data-autoplay="true")
+        +post-corporate({
+          date: 'Jul 02, 2019',
+          title: 'Could Puma Hunting Be Hurting Mule Deer?'
+        })
+          p For years, harvesting pumas has been used as a way to maintain robust mule deer populations for hunters to target. Now...
+
+        +post-corporate({
+          date: 'Jul 16, 2019',
+          title: 'Funding Jaguar Conservation'
+        })
+          p How is jaguar conservation related to fighting climate change? It might not seem like the two issues are connected but...
+
+        +post-corporate({
+          date: 'aug 02, 2019',
+          title: 'Protecting the Americas’ Largest Wild Cats'
+        })
+          p Bridging borders to protect jaguars, rangers and scientists from Honduras and Guatemala are collecting and...
+
+
+        +post-corporate({
+          date: 'Jul 02, 2019',
+          title: 'Protecting Tigers on the Water in Thailand'
+        })
+          p Protecting tigers is no easy task; it takes cooperation, dedication, and the ability to adapt. Since 2013, we have been working with our...
+
+        +post-corporate({
+          date: 'Jul 16, 2019',
+          title: 'Searching for Snow Leopards'
+        })
+          p Known for their elusive nature, snow leopards are referred to by locals as “mountain ghosts” and are very hard to find in India. However, we...
+
+        +post-corporate({
+          date: 'aug 02, 2019',
+          title: 'An Incredible First for Lions and Leopards'
+        })
+          p Recently, we have received a first-ever evidence of a wild lioness nursing a leopard cub. Taken on Tuesday by a Ndutu Lodge guest in Tanzania’s...
+
+        +post-corporate({
+          date: 'Jul 02, 2019',
+          title: 'Modeling the Ghost of the Mountain'
+        })
+          p The snow leopard is a notoriously elusive species, inhabiting some of the most remote and inaccessible tracts of Central and South Asia. Still...
+
+        +post-corporate({
+          date: 'Jul 16, 2019',
+          title: 'Why Snares are Dangerous Threats to Wildcats'
+        })
+          p Snares are silent killers laid by poachers across wild places to trap and kill animals for the illegal bushmeat trade. Every year across Africa’s...
+
+        +post-corporate({
+          date: 'aug 02, 2019',
+          title: 'Nepal’s Communities Can Coexist with Fishing Cats'
+        })
+          p The fishing cat (Prionailurus viverrinus), also known as the “cat that barks” — for its dog-like barking vocalizations, is a small cat species. They are one....
+
+
+
+
+  +parallax({
+    img: 'bg-image-4.jpg',
+    innerClass: 'section-xxl section-custom-1 context-dark text-center overlay overlay-3'
+  })
+    .container: .row.justify-content-md-center: .col-md-9.col-lg-8.col-xl-7.wow-outer
+      .wow.slideInDown
+        h2.heading-with-text-bg
+          | Join Our Newsletter
+          span.block-background-text.text-decorative-white-60.big Newsletter
+
+        form.rd-form.rd-form-offset-1.rd-mailform.rd-form-inline(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+          .form-wrap
+            input.form-input(id="subscribe-form-email" type="email" name="email" data-constraints="@Email @Required")
+            label.form-label(for="subscribe-form-email") E-mail
+          .form-button
+            button.button.button-primary.button-custom-1(type="submit") Subscribe
+
+
+
+  include ../sections/_section-partners
+
+
+  // Page Footer
+  include ../sections/_footer-minimal

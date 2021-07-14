@@ -1,0 +1,99 @@
+extends  ../_skeleton
+
+include ../components/_ui-box-icon
+include ../components/_ui-team
+
+block variables
+    - var activeCategory = 'pages'
+    - var pageName = 'About Us'
+
+block page 
+    // Page Header
+    include ../sections/_header-classic
+
+    +breadcrumbs({
+        category: activeCategory,
+        path: [pageName],
+        img: 'images/icon-lists-title-bg.jpg'
+    })
+
+
+    section.section.section-lg.bg-gray-100
+        .container
+            .row.row-50
+                .col-lg-6.pr-xl-5
+                    +jpg('about-us-1-518x430')
+                .col-lg-6
+                    h2.heading-with-text-bg
+                        | About Wildlife
+                        span.block-background-text.text-decorative-black-20.big About Us
+                    .text-with-divider
+                        .divider
+                        h4 Our charity foundation protect wild cats and other endangered species
+
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                    p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+
+    section.section.section-lg.bg-default
+        .container
+            .text-center
+                h2.heading-with-text-bg
+                    | Why Choose Us
+                    span.block-background-text.text-decorative-black-20.big Advantages
+            .row.row-50
+                .col-md-6.col-lg-4
+                    +box-icon-modern({
+                        classMod: 'decorate-triangle',
+                        icon: 'linearicons-shield text-gray-800',
+                        title: 'qualified Team'
+                    })
+                        p Morbi tristique senectus et netus et fames ac turpis egestas.
+                .col-md-6.col-lg-4
+                    +box-icon-modern({
+                        classMod: 'decorate-circle',
+                        icon: 'linearicons-paw text-gray-800',
+                        title: 'species protection'
+                    })
+                        p Etiam orci libero, vestibulum id libero non, feugiat ornare felis.
+                .col-md-6.col-lg-4
+                    +box-icon-modern({
+                        classMod: 'decorate-rectangle',
+                        icon: 'linearicons-recycle text-gray-800',
+                        title: 'Improving the habitat'
+                    })
+                        p Praesent vitae neque auctor, lectus eu, euismod vestibulum.
+                .col-md-6.col-lg-4
+                    +box-icon-modern({
+                        classMod: 'decorate-rectangle',
+                        icon: 'linearicons-sun text-gray-800',
+                        title: 'Global Work'
+                    })
+                        p Quisque tristique lorem id nulla, sed scelerisque magna mollis.
+                .col-md-6.col-lg-4
+                    +box-icon-modern({
+                        classMod: 'decorate-triangle',
+                        icon: 'linearicons-star text-gray-800',
+                        title: 'partnership'
+                    })
+                        p Etiam facilisis fermentum faucibus. Aliquam ac ante.
+                .col-md-6.col-lg-4
+                    +box-icon-modern({
+                        classMod: 'decorate-circle',
+                        icon: 'linearicons-helicopter text-gray-800',
+                        title: 'Life-saving programs'
+                    })
+                        p Ipsum primis in faucibus orci luctus et ultrices nulla lectus.
+
+
+
+    include ../sections/_section-parallax-counters
+
+
+
+
+    include ../sections/_section-partners
+
+
+    // Page Footer
+    include ../sections/_footer-minimal
+

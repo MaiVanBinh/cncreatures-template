@@ -1,0 +1,104 @@
+extends  ../_skeleton
+
+include ../components/_ui-box-icon
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Icon Lists'
+
+block page 
+	// Page Header
+	include ../sections/_header-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		img: 'images/icon-lists-title-bg.jpg'
+	})
+
+	
+	section.section.section-xl.section-xl-big.bg-default.text-center
+		.container
+			.row.row-50
+				.col-md-6.col-lg-4.wow-outer
+					.wow.slideInLeft
+						+box-icon-classic({
+							classMod: 'decorate-triangle decorate-color-secondary',
+							icon: 'linearicons-shield icon-gray-800',
+							title: 'qualified Team'
+						})
+							p We have gathered a team of highly qualified animal  protection experts.
+				.col-md-6.col-lg-4.wow-outer
+					.wow.slideInDown
+						+box-icon-classic({
+							classMod: 'decorate-circle decorate-color-secondary-2',
+							icon: 'linearicons-paw icon-gray-800',
+							title: 'protecting all Species'
+						})
+							p Besides wild cats, we also aim to protect and save other species of wild animals.
+				.col-md-6.col-lg-4.wow-outer
+					.wow.slideInRight
+						+box-icon-classic({
+							classMod: 'decorate-rectangle decorate-color-primary',
+							icon: 'linearicons-sun icon-gray-800',
+							title: 'global Work'
+						})
+							p Our organization works globally to help rescue more endangered species.
+
+	section.section.section-lg.bg-gray-700
+		.container
+			.row.row-50
+				.col-md-6.col-lg-4
+					+box-icon-modern({
+						classMod: 'decorate-triangle',
+						icon: 'linearicons-shield text-gray-800',
+						title: 'qualified Team'
+					})
+						p Morbi tristique senectus et netus et fames ac turpis egestas.
+				.col-md-6.col-lg-4
+					+box-icon-modern({
+						classMod: 'decorate-circle',
+						icon: 'linearicons-paw text-gray-800',
+						title: 'species protection'
+					})
+						p Etiam orci libero, vestibulum id libero non, feugiat ornare felis.
+				.col-md-6.col-lg-4
+					+box-icon-modern({
+						classMod: 'decorate-rectangle',
+						icon: 'linearicons-recycle text-gray-800',
+						title: 'Improving the habitat'
+					})
+						p Praesent vitae neque auctor, lectus eu, euismod vestibulum.
+				.col-md-6.col-lg-4
+					+box-icon-modern({
+						classMod: 'decorate-rectangle',
+						icon: 'linearicons-sun text-gray-800',
+						title: 'Global Work'
+					})
+						p Quisque tristique lorem id nulla, sed scelerisque magna mollis.
+				.col-md-6.col-lg-4
+					+box-icon-modern({
+						classMod: 'decorate-triangle',
+						icon: 'linearicons-star text-gray-800',
+						title: 'partnership'
+					})
+						p Etiam facilisis fermentum faucibus. Aliquam ac ante.
+				.col-md-6.col-lg-4
+					+box-icon-modern({
+						classMod: 'decorate-circle',
+						icon: 'linearicons-helicopter text-gray-800',
+						title: 'Life-saving programs'
+					})
+						p Ipsum primis in faucibus orci luctus et ultrices nulla lectus.
+
+
+
+
+
+
+
+
+
+
+	// Page Footer
+	include ../sections/_footer-minimal

@@ -1,0 +1,91 @@
+extends  ../_skeleton
+
+include ../components/_ui-posts
+include ../components/_ui-pagination
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'News 2'
+
+block page 
+	// Page Header
+	include ../sections/_header-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		img: 'images/icon-lists-title-bg.jpg'
+	})
+
+
+	section.section.section-lg.bg-gray-1
+		.container
+			.row.row-50
+				.col-md-6.col-lg-4
+					+post-modern({
+						img: 'post-modern-1-370x255',
+						badgeMod: 'badge-primary',
+						badge: 'news',
+						date: 'May 11, 2019',
+						title: 'Could Puma Hunting Be Hurting Mule Deer?'
+					})
+				.col-md-6.col-lg-4
+					+post-modern({
+						classMod: 'post-modern-reverse',
+						img: 'post-modern-2-370x255',
+						badgeMod: 'badge-primary',
+						badge: 'news',
+						date: 'April 25, 2019',
+						title: 'Funding Jaguar Conservation'
+					})
+				.col-md-6.col-lg-4
+					+post-modern-text({
+						badge: 'news',
+						date: 'July 02, 2019',
+						title: 'Protecting the Americas’ Largest Wild Cats\n'
+					})
+						p Eabitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. 
+	
+				.col-md-6.col-lg-4
+					+post-modern({
+						classMod: 'post-modern-reverse',
+						img: 'post-modern-3-370x255',
+						badgeMod: 'badge-primary',
+						badge: 'news',
+						date: 'April 25, 2019',
+						title: 'Protecting Tigers on the Water in Thailand'
+					})
+				.col-md-6.col-lg-4
+					+post-modern({
+						img: 'post-modern-4-370x255',
+						badgeMod: 'badge-primary',
+						badge: 'news',
+						date: 'May 11, 2019',
+						title: 'Searching for Snow Leopards'
+					})
+				.col-md-6.col-lg-4
+					+post-modern({
+						classMod: 'post-modern-reverse',
+						img: 'post-modern-5-370x255',
+						badgeMod: 'badge-primary',
+						badge: 'news',
+						date: 'April 25, 2019',
+						title: 'An Incredible First for Lions and Leopards'
+					})
+				.col-md-6.col-lg-4
+					+post-modern({
+						img: 'post-modern-6-370x255',
+						badgeMod: 'badge-primary',
+						badge: 'news',
+						date: 'May 11, 2019',
+						title: 'Modeling the Ghost of the Mountain'
+					})
+				.col-md-6.col-lg-4
+					+post-modern-text({
+						badge: 'news',
+						date: 'July 02, 2019',
+						title: 'Why Snares are Dangerous Threats to Wildcats'
+					})
+						p Suspendisse ut nisl id metus facilisis placerat. Nam ut vulputate nisl. Morbi volutpat erat in lacinia tincidunt. Cras ut fringilla turpis. Aliquam est ipsum, varius id suscipit in, elementum a ante. Vivamus sed pulvinar enim, id malesuada risus suspendisse.
+	// Page Footer
+	include ../sections/_footer-minimal

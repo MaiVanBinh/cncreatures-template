@@ -1,0 +1,114 @@
+extends  ../_skeleton
+
+include ../components/_ui-posts
+include ../components/_ui-pagination
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'News'
+
+block page 
+	// Page Header
+	include ../sections/_header-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		img: 'images/icon-lists-title-bg.jpg'
+	})
+
+
+	section.section.section-lg.bg-default
+		.container
+			.row.row-70.justify-content-xl-between
+				.col-lg-8
+					.row.row-50.justify-content-center
+						.col-md-6
+							+post-classic({
+								img: 'post-classic-4-370x255',
+								title: 'Could Puma Hunting Be Hurting Mule Deer?',
+								date: 'April 25, 2019',
+								tag: 'News'
+							})
+						.col-md-6
+							+post-classic({
+								img: 'post-classic-2-370x255',
+								title: 'Tools We Use for Funding Jaguar Conservation',
+								date: 'April 25, 2019',
+								tag: 'News'
+							})
+						.col-md-6
+							+post-classic({
+								img: 'post-classic-5-370x255',
+								title: 'Protecting the Americas’ Largest Wild Cats',
+								date: 'April 25, 2019',
+								tag: 'News'
+							})
+						.col-md-6
+							+post-classic({
+								img: 'post-classic-8-370x255',
+								title: 'Protecting Tigers on the Water in Thailand',
+								date: 'April 25, 2019',
+								tag: 'Sales'
+							})
+						.col-md-6
+							+post-classic({
+								img: 'post-classic-7-370x255',
+								title: 'Searching for Snow Leopards in India',
+								date: 'April 25, 2019',
+								tag: 'Marketing'
+							})
+						.col-md-6
+							+post-classic({
+								img: 'post-classic-6-370x255',
+								title: 'How to Easily Reach the Venue of Our Event',
+								date: 'April 25, 2019',
+								tag: 'News'
+							})
+						+pagination-bootstrap('pagination-classic', 1, 3)
+				.col-lg-4.col-xl-3
+					.block-aside
+						.block-aside-item
+							h5.block-aside-title Categories
+							ul.category-list
+								li.active: a(href='#') All Categories
+									span 12
+								li: a(href='#') News
+									span 3
+								li: a(href='#') Wild Cats
+									span 4
+								li: a(href='#') Animals
+									span 6
+								li: a(href='#') Volunteering
+									span 2
+						.block-aside-item
+							h5.block-aside-title Search News
+							// RD Search
+							form.rd-search.form-sm(action="search-results.html", method="GET", data-search-live="rd-search-results-live")
+								.form-wrap
+									label(for="rd-search-form-input" class="form-label") Enter a keyword…
+									input(class="form-input" id="rd-search-form-input" type="text" name="s" autocomplete="off")
+									button(type='submit').button-search.icon.linearicons-magnifier
+
+						.block-aside-item
+							h5.block-aside-title Latest News
+							.post-minimal
+								h5.post-minimal-title: a(href='blog-post.html') Why Snares are Dangerous Threats to Wildcats
+								p.post-minimal-date Oct 17, 2019
+							.post-minimal
+								h5.post-minimal-title: a(href='blog-post.html') Nepal’s Communities Can Coexist with Fishing Cats
+								p.post-minimal-date Nov 10, 2019
+							
+						.block-aside-item
+							h5.block-aside-title Newsletter
+							// RD Mailform
+							form.rd-mailform.text-left.form-sm(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+								
+								.form-wrap
+									label.form-label(for="contact-email") Enter Your E-mail
+									input#contact-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+								
+								.form-button
+									button(type="submit").button.button-block.button-primary Subscribe
+	// Page Footer
+	include ../sections/_footer-minimal
